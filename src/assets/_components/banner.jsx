@@ -52,7 +52,7 @@ const Banner = () => {
         <div className="z-10">
           <img
             className="w-full h-auto rounded-md hidden md:block"
-            src="/src/assets/images/hero-image.png"
+            src="src/assets/images/hero-image.png"
             alt="Enlish master hero image"
           />
         </div>
