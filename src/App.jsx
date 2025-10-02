@@ -7,8 +7,6 @@ import Navbar from "./assets/_components/navbar";
 import OfferSection from "./assets/_components/offer";
 import ProgramsSection from "./assets/_components/programs";
 import SuccessStorySection from "./assets/_components/successStory";
-import { SpeedInsights } from '@vercel/speed-insights/next';
-
 
 function App() {
   return (
@@ -42,7 +40,6 @@ function App() {
       <Footer />
       {/* footer */}
 
-      <SpeedInsights/>
     </section>
   );
 }
