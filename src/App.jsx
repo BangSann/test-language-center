@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import "./App.css";
 import Banner from "./assets/_components/banner";
 import BenefitsSection from "./assets/_components/benefits";
@@ -39,7 +40,7 @@ function App() {
       {/* footer */}
       <Footer />
       {/* footer */}
-
+      <SpeedInsights />
     </section>
   );
 }
