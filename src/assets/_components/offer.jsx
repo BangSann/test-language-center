@@ -40,9 +40,9 @@ const offerList = [
 
 const OfferSection = () => {
   return (
-    <section className="bg-[#bfe0ff] text-white py-24" id="offer">
+    <section className="bg-[#bfe0ff] py-24" id="offer">
       <div className="container mx-auto px-2 text-center">
-        <h2 className="text-3xl font-semibold">Siap Jago Bahasa Inggris?</h2>
+        <h2 className="text-3xl font-semibold text-gray-900">Siap Jago Bahasa Inggris?</h2>
         <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-center leading-snug">
           Ikutan batch berikutnya yang mulai sebentar lagi. Daftar sekarang dan
           ambil langkah pertama menuju masa depan yang lebih cerah.
