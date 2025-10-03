@@ -52,14 +52,14 @@ const OfferSection = () => {
           {offerList.map((offer, index) => (
             <div
               key={index}
-              className="bg-white text-gray-800 rounded-lg shadow-lg p-6 flex-1 flex flex-col"
+              className="bg-white text-gray-900 rounded-lg shadow-lg p-6 flex-1 flex flex-col"
             >
               <h3 className="text-2xl font-semibold mb-4">{offer.course}</h3>
               <div className="mb-4">
                 <span className="text-3xl font-bold text-blue-600">
                   Rp {offer.price.toLocaleString("id-ID")}
                 </span>
-                <span className="text-sm text-red-500 ml-2">
+                <span className="text-sm text-red-700 ml-2">
                   {offer.discount}
                 </span>
                 <div className="text-sm text-gray-500 line-through">
