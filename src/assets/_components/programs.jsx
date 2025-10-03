@@ -44,9 +44,9 @@ const programsItems = [
 
 const ProgramsSection = () => {
   return (
-    <section className="bg-[#bfe0ff] py-24 px-2" id="program">
+    <section className="bg-[#bfe0ff] py-24" id="program">
       
-      <div className="container mx-auto">
+      <div className="container mx-auto px-2">
         <h2 className="text-3xl font-semibold ">
           Kenapa Pilih Language Center?
         </h2>
@@ -56,7 +56,7 @@ const ProgramsSection = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 container mx-auto mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 container mx-auto mt-12 px-2">
         {programsItems.map((item, index) => (
           <section key={index} className="card bg-slate-50 shadow-md">
             <div className="card-body text-start space-y-2">

@@ -46,7 +46,7 @@ const SuccessStorySection = () => {
           Language Center
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 container mx-auto mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 container mx-auto mt-12 px-2">
           {successPeople.map((person, index) => (
             <section key={index} className="card bg-white shadow-md">
               <div className="card-body text-start space-y-2">

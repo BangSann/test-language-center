@@ -1,6 +1,48 @@
+import { addDoc, collection } from "firebase/firestore";
 import { Formik } from "formik";
+import { useState } from "react";
+import { store } from "../../lib/firebase";
+
+const programsItems = [
+  {
+    value: "",
+    label: "-- Pilih program --",
+  },
+  {
+    value: "Intensive Course",
+    label: "Kursus Intensif",
+  },
+  {
+    value: "Speaking Class",
+    label: "Kelas Speaking",
+  },
+  {
+    value: "TOEFL Preparation",
+    label: "Persiapan TOEFL",
+  },
+  {
+    value: "IELTS Preparation",
+    label: "Persiapan IELTS",
+  },
+  {
+    value: "Business English",
+    label: "Bahasa Inggris Bisnis",
+  },
+];
 
 const ContactSection = () => {
+  const [isLoading, setIsLoading] = useState();
+
+  async function postLeadData(e) {
+    setIsLoading(true);
+    const docRef = await addDoc(collection(store, "test-language-store"), {
+      name: e.name,
+      telp: e.telp,
+      program: e.preferenceProgram,
+    });
+    console.log("Document written with ID: ", docRef.id);
+    setIsLoading(false);
+  }
   return (
     <section className="bg-white py-24" id="contact">
       <div className="container mx-auto px-4 text-center">
@@ -10,15 +52,15 @@ const ContactSection = () => {
         </h2>
         <p className="text-gray-600 mt-4 max-w-2xl mx-auto leading-snug">
           Isi form di bawah ini, tim kami akan menghubungi kamu untuk konsultasi
-          gratis dan membantu memilih program yang paling sesuai dengan kebutuhan
-          kamu.
+          gratis dan membantu memilih program yang paling sesuai dengan
+          kebutuhan kamu.
         </p>
 
         {/* Formik Form */}
         <Formik
           initialValues={{ name: "", telp: "", preferenceProgram: "" }}
           onSubmit={(values) => {
-            console.log(values);
+            postLeadData(values);
           }}
           validate={(values) => {
             const errors = {};
@@ -89,14 +131,11 @@ const ContactSection = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 >
-                  <option value="">-- Pilih program --</option>
-                  <option value="Intensive Course">Kursus Intensif</option>
-                  <option value="Speaking Class">Kelas Speaking</option>
-                  <option value="TOEFL Preparation">Persiapan TOEFL</option>
-                  <option value="IELTS Preparation">Persiapan IELTS</option>
-                  <option value="Business English">
-                    Bahasa Inggris Bisnis
-                  </option>
+                  {programsItems.map((program, index) => (
+                    <option key={index} value={program.value} id={index}>
+                      {program.label}
+                    </option>
+                  ))}
                 </select>
                 {errors.preferenceProgram && touched.preferenceProgram && (
                   <p className="text-red-500 text-sm mt-1">
@@ -108,9 +147,12 @@ const ContactSection = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="btn btn-lg btn-primary w-full bg-blue-600 border-0 hover:bg-blue-700"
+                className={`btn btn-lg btn-primary w-full ${
+                  !isLoading ? "bg-blue-600" : "bg-blue-400"
+                } border-0 hover:bg-blue-700`}
+                disabled={isLoading}
               >
-                Kirim Pendaftaran
+                {isLoading ? "Waiting..." : "Kirim Pendaftaran"}
               </button>
             </form>
           )}

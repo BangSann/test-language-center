@@ -49,7 +49,7 @@ const Navbar = () => {
         {/* responsive navbar */}
 
         <div className="navbar-end lg:flex hidden">
-          <ul className="menu menu-horizontal px-1 items-center gap-3">
+          <ul className="menu menu-horizontal p-0 items-center gap-3">
             <li>
               <a href="#home">Home</a>
             </li>
