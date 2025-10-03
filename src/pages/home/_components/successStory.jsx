@@ -48,7 +48,7 @@ const SuccessStorySection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 container mx-auto mt-12 px-2">
           {successPeople.map((person, index) => (
-            <section key={index} className="card bg-white shadow-md">
+            <section key={index} className="card bg-white shadow-md transform transition duration-500 hover:scale-105">
               <div className="card-body text-start space-y-2">
                 <div className="flex items-center gap-4 ">
                   <span className="w-12 h-12 bg-blue-600 rounded-full flex justify-center items-center">

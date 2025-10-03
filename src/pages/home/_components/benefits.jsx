@@ -49,7 +49,7 @@ const BenefitsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 container mx-auto mt-12">
           {benefitsItems.map((item, index) => (
-            <section key={index} className="card bg-white shadow-md">
+            <section key={index} className="card bg-white shadow-md transform transition duration-500 hover:scale-105">
               <div className="card-body text-center space-y-2">
                 <div className="w-full flex justify-center items-center">
                   <span

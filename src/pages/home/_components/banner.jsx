@@ -31,7 +31,7 @@ const Banner = () => {
 
           <div className="flex items-center gap-6 justify-center md:justify-start flex-wrap">
             <button
-              className="btn btn-primary bg-blue-600 text-white hover:bg-blue-700"
+              className="btn btn-primary bg-blue-600 text-white transition duration-600 hover:scale-102"
               onClick={() => {
                 window.location = "#contact";
               }}

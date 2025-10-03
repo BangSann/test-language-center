@@ -29,7 +29,7 @@ const Navbar = () => {
     <section className="bg-white shadow-md sticky top-0 z-50">
       <nav className="navbar container mx-auto ">
         <div className="navbar-start">
-          <a className="flex items-center gap-2 font-bold text-xl" href="#home">
+          <a className="flex items-center gap-2 font-bold text-xl" href="/">
             <span className="p-2 bg-blue-600 rounded-md">
               <BsMortarboardFill color="#ffff" />
             </span>

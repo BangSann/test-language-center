@@ -1,7 +1,8 @@
 import { addDoc, collection } from "firebase/firestore";
 import { Formik } from "formik";
 import { useState } from "react";
-import { store } from "../../lib/firebase";
+import { store } from "../../../lib/firebase";
+import { toast } from "react-toastify";
 
 const programsItems = [
   {
@@ -32,15 +33,21 @@ const programsItems = [
 
 const ContactSection = () => {
   const [isLoading, setIsLoading] = useState();
-
+  
   async function postLeadData(e) {
     setIsLoading(true);
     const docRef = await addDoc(collection(store, "test-language-store"), {
-      name: e.name,
-      telp: e.telp,
-      program: e.preferenceProgram,
+      name: e.values.name,
+      telp: e.values.telp,
+      program: e.values.preferenceProgram,
     });
-    console.log("Document written with ID: ", docRef.id);
+    if (docRef.id) {
+      toast.success("Permintaan anda berhasil dikirim");
+      e.resetForm();
+    } else {
+      toast.error("Permintaan anda gagal dikirim");
+      e.resetForm();
+    }
     setIsLoading(false);
   }
   return (
@@ -59,8 +66,8 @@ const ContactSection = () => {
         {/* Formik Form */}
         <Formik
           initialValues={{ name: "", telp: "", preferenceProgram: "" }}
-          onSubmit={(values) => {
-            postLeadData(values);
+          onSubmit={(values, { resetForm }) => {
+            postLeadData({ values, resetForm });
           }}
           validate={(values) => {
             const errors = {};

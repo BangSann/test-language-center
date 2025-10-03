@@ -1,47 +1,20 @@
-import { SpeedInsights } from "@vercel/speed-insights/react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Banner from "./assets/_components/banner";
-import BenefitsSection from "./assets/_components/benefits";
-import ContactSection from "./assets/_components/contact";
-import Footer from "./assets/_components/footer";
-import Navbar from "./assets/_components/navbar";
-import OfferSection from "./assets/_components/offer";
-import ProgramsSection from "./assets/_components/programs";
-import SuccessStorySection from "./assets/_components/successStory";
+import HomePage from "./pages/home/home";
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { ToastContainer } from "react-toastify";
+import RegistrationPage from "./pages/registration/registration";
 
 function App() {
   return (
-    <section>
-      <Navbar />
-
-      {/* hero section */}
-      <Banner />
-      {/* hero section */}
-
-      {/* programs section */}
-      <ProgramsSection />
-      {/* programs section */}
-
-      {/* benefits section */}
-      <BenefitsSection />
-      {/* benefits section */}
-
-      {/* success story */}
-      <SuccessStorySection />
-      {/* success story */}
-
-      {/* Offer section */}
-      <OfferSection />
-
-      {/* contact  */}
-      <ContactSection />
-      {/* contact  */}
-
-      {/* footer */}
-      <Footer />
-      {/* footer */}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/registration" element={<RegistrationPage />} />
+      </Routes>
       <SpeedInsights />
-    </section>
+      <ToastContainer position="bottom-right"/>
+    </BrowserRouter>
   );
 }
 

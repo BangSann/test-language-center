@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 const offerList = [
   {
     course: "English Master",
@@ -39,10 +41,13 @@ const offerList = [
 ];
 
 const OfferSection = () => {
+  const navigation = useNavigate();
   return (
     <section className="bg-[#bfe0ff] py-24" id="offer">
       <div className="container mx-auto px-2 text-center">
-        <h2 className="text-3xl font-semibold text-gray-900">Siap Jago Bahasa Inggris?</h2>
+        <h2 className="text-3xl font-semibold text-gray-900">
+          Siap Jago Bahasa Inggris?
+        </h2>
         <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-center leading-snug">
           Ikutan batch berikutnya yang mulai sebentar lagi. Daftar sekarang dan
           ambil langkah pertama menuju masa depan yang lebih cerah.
@@ -52,7 +57,7 @@ const OfferSection = () => {
           {offerList.map((offer, index) => (
             <div
               key={index}
-              className="bg-white text-gray-900 rounded-lg shadow-lg p-6 flex-1 flex flex-col"
+              className="bg-white text-gray-900 rounded-lg shadow-lg p-6 flex-1 flex flex-col "
             >
               <h3 className="text-2xl font-semibold mb-4">{offer.course}</h3>
               <div className="mb-4">
@@ -100,7 +105,10 @@ const OfferSection = () => {
                   </li>
                 ))}
               </ul>
-              <button className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">
+              <button
+                className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition cursor-pointer"
+                onClick={() => navigation("/registration")}
+              >
                 Daftar Sekarang
               </button>
             </div>

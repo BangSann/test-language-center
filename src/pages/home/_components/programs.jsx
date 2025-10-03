@@ -58,7 +58,7 @@ const ProgramsSection = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 container mx-auto mt-12 px-2">
         {programsItems.map((item, index) => (
-          <section key={index} className="card bg-slate-50 shadow-md">
+          <section key={index} className="card bg-slate-50 shadow-md transform transition duration-500 hover:scale-105">
             <div className="card-body text-start space-y-2">
               <div className="w-full flex justify-start items-center">
                 <span
