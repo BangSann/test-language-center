@@ -35,7 +35,7 @@ const RegistrationPage = () => {
         <div className="bg-blue-600 h-full">
           <div className="bg-white w-full h-full flex flex-col items-center justify-center rounded-s-xl">
             <h1 className="text-2xl font-bold">Lets Start Your Journey</h1>
-            <p>Isi form dibawah ini untuk melakukak pendaftaran.</p>
+            <p className="text-slate-700">Isi form dibawah ini untuk melakukan pendaftaran.</p>
             {/* regis form */}
             <RegistrationForm />
           </div>

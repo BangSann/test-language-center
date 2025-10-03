@@ -1,5 +1,9 @@
+import { addDoc, collection } from "firebase/firestore";
 import { Formik } from "formik";
 import { useState } from "react";
+import { store } from "../../../lib/firebase";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const programsItems = [
   {
@@ -30,6 +34,31 @@ const programsItems = [
 
 const RegistrationForm = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+
+  async function handlerRegistering(e) {
+    setIsLoading(true);
+
+    const docRef = await addDoc(collection(store, "registering-users"), {
+      email: e.values.email,
+      gender: e.values.jenis_kelamin,
+      kesibukan: e.values.kesibukan,
+      name: e.values.name,
+      no_telp: e.values.telp,
+      program: e.values.program,
+    });
+    if (docRef.id) {
+      toast.success("Berhasil daftar");
+      e.resetForm();
+      navigate("/");
+    } else {
+      toast.error("Pendaftaran gagal");
+      e.resetForm();
+    }
+
+    setIsLoading(false);
+  }
+
   return (
     <Formik
       initialValues={{
@@ -40,8 +69,8 @@ const RegistrationForm = () => {
         jenis_kelamin: "laki-laki",
         kesibukan: "",
       }}
-      onSubmit={(values) => {
-        console.log(values);
+      onSubmit={(values, { resetForm }) => {
+        handlerRegistering({ values, resetForm });
       }}
       validate={(values) => {
         var errors = {};
@@ -49,7 +78,8 @@ const RegistrationForm = () => {
         if (!values.name) errors.name = "Nama wajib diisi";
         if (!values.telp) errors.telp = "No telephone wajib diisi";
         if (!values.program) errors.program = "Program wajib diisi";
-        if (!values.jenis_kelamin) errors.jenis_kelamin = "Jenis kelamin wajib diisi";
+        if (!values.jenis_kelamin)
+          errors.jenis_kelamin = "Jenis kelamin wajib diisi";
         if (!values.kesibukan) errors.kesibukan = "Kesibukan wajib diisi";
 
         return errors;
@@ -63,7 +93,10 @@ const RegistrationForm = () => {
         handleBlur,
         handleSubmit,
       }) => (
-        <form onSubmit={handleSubmit} className="space-y-2 text-start mt-6 px-24">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-2 text-start mt-6 px-24"
+        >
           <div className="flex flex-col gap-1">
             <label htmlFor="name" className="label">
               Nama Lengkap
@@ -106,46 +139,52 @@ const RegistrationForm = () => {
 
           <div className="grid grid-cols-2 gap-2">
             <div className="flex flex-col gap-1">
-            <label htmlFor="telp" className="label">
-              No Telephone
-            </label>
-            <input
-              name="telp"
-              type="telp"
-              placeholder="+62xxxxxxxxx"
-              className={`input input-bordered w-full ${
-                errors.telp && touched.telp && "border-red-700"
-              }`}
-              value={values.telp}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            {errors.telp && touched.telp && (
-              <p className="text-red-500 text-sm mt-1">{errors.telp}</p>
-            )}
-          </div>
+              <label htmlFor="telp" className="label">
+                No Telephone
+              </label>
+              <input
+                name="telp"
+                type="telp"
+                placeholder="+62xxxxxxxxx"
+                className={`input input-bordered w-full ${
+                  errors.telp && touched.telp && "border-red-700"
+                }`}
+                value={values.telp}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.telp && touched.telp && (
+                <p className="text-red-500 text-sm mt-1">{errors.telp}</p>
+              )}
+            </div>
 
-          <div className="flex flex-col gap-1">
-            <label htmlFor="jenis_kelamin">Jenis Kelamin</label>
-            <select
-              name="jenis_kelamin"
-              value={values.jenis_kelamin}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={`select select-bordered w-full ${
-                errors.jenis_kelamin && touched.jenis_kelamin && "border-red-700"
-              }`}
-            >
-              <option value="laki-laki" id="laki-laki">Laki-laki</option>
-              <option value="perempuan" id="perempuan">Perempuan</option>
-            </select>
+            <div className="flex flex-col gap-1">
+              <label htmlFor="jenis_kelamin">Jenis Kelamin</label>
+              <select
+                name="jenis_kelamin"
+                value={values.jenis_kelamin}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={`select select-bordered w-full ${
+                  errors.jenis_kelamin &&
+                  touched.jenis_kelamin &&
+                  "border-red-700"
+                }`}
+              >
+                <option value="laki-laki" id="laki-laki">
+                  Laki-laki
+                </option>
+                <option value="perempuan" id="perempuan">
+                  Perempuan
+                </option>
+              </select>
 
-            {errors.jenis_kelamin && touched.jenis_kelamin && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.jenis_kelamin}
-              </p>
-            )}
-          </div>
+              {errors.jenis_kelamin && touched.jenis_kelamin && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.jenis_kelamin}
+                </p>
+              )}
+            </div>
           </div>
 
           <div className="space-y-2 grid grid-cols-2 items-start gap-2">

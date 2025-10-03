@@ -36,10 +36,10 @@ const ContactSection = () => {
   
   async function postLeadData(e) {
     setIsLoading(true);
-    const docRef = await addDoc(collection(store, "test-language-store"), {
+    const docRef = await addDoc(collection(store, "konsultation-datas"), {
       name: e.values.name,
       telp: e.values.telp,
-      program: e.values.preferenceProgram,
+      preference_program: e.values.preferenceProgram,
     });
     if (docRef.id) {
       toast.success("Permintaan anda berhasil dikirim");
@@ -114,7 +114,7 @@ const ContactSection = () => {
                   Nomor HP
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   name="telp"
                   id="telp"
                   placeholder="Contoh: 0812xxxxxxx"
