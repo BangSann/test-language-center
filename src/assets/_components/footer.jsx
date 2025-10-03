@@ -24,18 +24,21 @@ const Footer = () => {
               <a
                 href="#"
                 className="bg-slate-600 p-2 rounded-full hover:bg-blue-600 transition-colors"
+                aria-label="kunjungi facebook kami"
               >
                 <FaFacebook />
               </a>
               <a
                 href="#"
                 className="bg-slate-600 p-2 rounded-full hover:bg-pink-500 transition-colors"
+                aria-label="kunjungi Instagram kami"
               >
                 <BsInstagram />
               </a>
               <a
                 href="#"
                 className="bg-slate-600 p-2 rounded-full hover:bg-red-600 transition-colors"
+                aria-label="kunjungi Youtube kami"
               >
                 <BsYoutube />
               </a>
@@ -44,9 +47,9 @@ const Footer = () => {
 
           {/* Contact Info */}
           <nav>
-            <h6 className="footer-title mb-3 text-white font-semibold">
+            <h4 className="footer-title mb-3 text-white font-semibold">
               Kontak Kami
-            </h6>
+            </h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <IoLocationSharp size={24} className="text-blue-600 mt-1" />
@@ -75,9 +78,9 @@ const Footer = () => {
 
           {/* Programs */}
           <nav>
-            <h6 className="footer-title mb-3 text-white font-semibold">
+            <h4 className="footer-title mb-3 text-white font-semibold">
               Program Kami
-            </h6>
+            </h4>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="hover:text-white">
@@ -109,9 +112,9 @@ const Footer = () => {
 
           {/* Resource */}
           <nav>
-            <h6 className="footer-title mb-3 text-white font-semibold">
+            <h4 className="footer-title mb-3 text-white font-semibold">
               Informasi
-            </h6>
+            </h4>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="hover:text-white">

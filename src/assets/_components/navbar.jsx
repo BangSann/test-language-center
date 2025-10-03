@@ -44,6 +44,7 @@ const Navbar = () => {
               tabIndex={0}
               role="button"
               className="btn btn-ghost btn-circle"
+              aria-label="burger-navbar"
             >
               <RxHamburgerMenu size={24} />
             </div>
