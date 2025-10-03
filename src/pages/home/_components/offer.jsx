@@ -43,7 +43,7 @@ const offerList = [
 const OfferSection = () => {
   const navigation = useNavigate();
   return (
-    <section className="bg-[#bfe0ff] py-24" id="offer">
+    <section className="bg-[#bfe0ff] py-24" id="pricing">
       <div className="container mx-auto px-2 text-center">
         <h2 className="text-3xl font-semibold text-gray-900">
           Siap Jago Bahasa Inggris?

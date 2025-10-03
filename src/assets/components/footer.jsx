@@ -1,6 +1,30 @@
 import { BsInstagram, BsMortarboardFill, BsYoutube } from "react-icons/bs";
 import { FaFacebook, FaPhone } from "react-icons/fa";
 import { IoLocationSharp, IoMail } from "react-icons/io5";
+
+const navbarItems = [
+  {
+    label: "Home",
+    link: "#home",
+  },
+  {
+    label: "Program",
+    link: "#program",
+  },
+  {
+    label: "Benefit",
+    link: "#benefits",
+  },
+  {
+    label: "Pricing",
+    link: "#pricing",
+  },
+  {
+    label: "Contact",
+    link: "#contact",
+  },
+];
+
 const Footer = () => {
   return (
     <section className="bg-slate-900 pt-12 text-white">
@@ -46,7 +70,7 @@ const Footer = () => {
           </aside>
 
           {/* Contact Info */}
-          <nav>
+          {/* <nav>
             <h4 className="footer-title mb-3 text-white font-semibold">
               Kontak Kami
             </h4>
@@ -73,6 +97,20 @@ const Footer = () => {
                   info@englishmaster.com
                 </a>
               </li>
+            </ul>
+          </nav> */}
+
+          {/* Navigasi */}
+          <nav>
+            <h4 className="footer-title mb-3 text-white font-semibold">
+              Navigasi
+            </h4>
+            <ul className="space-y-2">
+              {navbarItems.map((nav, index) => (
+                <li key={index} className="hover:underline">
+                  <a href={nav.link}>{nav.label}</a>
+                </li>
+              ))}
             </ul>
           </nav>
 

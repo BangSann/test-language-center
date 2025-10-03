@@ -15,8 +15,8 @@ const navbarItems = [
     link: "#benefits",
   },
   {
-    label: "Testimoni",
-    link: "#testimonials",
+    label: "Pricing",
+    link: "#pricing",
   },
   {
     label: "Contact",
@@ -64,19 +64,26 @@ const Navbar = () => {
 
         <div className="navbar-end lg:flex hidden">
           <ul className="menu menu-horizontal p-0 items-center gap-3">
-            {navbarItems.map((nav, index) => (
-              <li key={index} className="hover:underline">
-                <a href={nav.link}>{nav.label}</a>
-              </li>
-            ))}
-            <li>
-              <a
-                href="#contact"
-                className="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 font-semibold"
-              >
-                Contact
-              </a>
-            </li>
+            {navbarItems.map((nav, index) => {
+              if (nav.link == "#contact") {
+                return (
+                  <li>
+                    <a
+                      href={nav.link}
+                      className="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 font-semibold"
+                    >
+                      {nav.label}
+                    </a>
+                  </li>
+                );
+              } else {
+                return (
+                  <li key={index} className="hover:underline">
+                    <a href={nav.link}>{nav.label}</a>
+                  </li>
+                );
+              }
+            })}
           </ul>
         </div>
       </nav>
