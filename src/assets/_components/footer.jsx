@@ -13,7 +13,7 @@ const Footer = () => {
               <span className="p-2 bg-blue-600 rounded-md inline-block">
                 <BsMortarboardFill size={24} color="#ffffff" />
               </span>
-              <h6 className="text-xl font-bold text-white">English Master</h6>
+              <h3 className="text-xl font-bold text-white">English Master</h3>
             </div>
             <p className="max-w-xs text-sm leading-relaxed">
               Ubah masa depanmu bareng English Master. <br />
@@ -80,19 +80,29 @@ const Footer = () => {
             </h6>
             <ul className="space-y-2">
               <li>
-                <a className="hover:text-white">Kursus Intensif</a>
+                <a href="#" className="hover:text-white">
+                  Kursus Intensif
+                </a>
               </li>
               <li>
-                <a className="hover:text-white">Kelas Speaking</a>
+                <a href="#" className="hover:text-white">
+                  Kelas Speaking
+                </a>
               </li>
               <li>
-                <a className="hover:text-white">Persiapan TOEFL</a>
+                <a href="#" className="hover:text-white">
+                  Persiapan TOEFL
+                </a>
               </li>
               <li>
-                <a className="hover:text-white">Persiapan IELTS</a>
+                <a href="#" className="hover:text-white">
+                  Persiapan IELTS
+                </a>
               </li>
               <li>
-                <a className="hover:text-white">Inggris Bisnis</a>
+                <a href="#" className="hover:text-white">
+                  Inggris Bisnis
+                </a>
               </li>
             </ul>
           </nav>
@@ -104,19 +114,29 @@ const Footer = () => {
             </h6>
             <ul className="space-y-2">
               <li>
-                <a className="hover:text-white">Portal Siswa</a>
+                <a href="#" className="hover:text-white">
+                  Portal Siswa
+                </a>
               </li>
               <li>
-                <a className="hover:text-white">Akomodasi</a>
+                <a href="#" className="hover:text-white">
+                  Akomodasi
+                </a>
               </li>
               <li>
-                <a className="hover:text-white">Cerita Sukses</a>
+                <a href="#" className="hover:text-white">
+                  Cerita Sukses
+                </a>
               </li>
               <li>
-                <a className="hover:text-white">FAQ</a>
+                <a href="#" className="hover:text-white">
+                  FAQ
+                </a>
               </li>
               <li>
-                <a className="hover:text-white">Lokasi Kampus</a>
+                <a href="#" className="hover:text-white">
+                  Lokasi Kampus
+                </a>
               </li>
             </ul>
           </nav>

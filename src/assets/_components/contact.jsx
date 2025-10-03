@@ -89,6 +89,7 @@ const ContactSection = () => {
                 <input
                   type="text"
                   name="name"
+                  id="name"
                   placeholder="Tulis nama lengkap kamu"
                   className="input input-lg input-bordered w-full mt-2 text-black"
                   value={values.name}
@@ -108,6 +109,7 @@ const ContactSection = () => {
                 <input
                   type="text"
                   name="telp"
+                  id="telp"
                   placeholder="Contoh: 0812xxxxxxx"
                   className="input input-lg input-bordered w-full mt-2 text-black"
                   value={values.telp}
@@ -126,6 +128,7 @@ const ContactSection = () => {
                 </label>
                 <select
                   name="preferenceProgram"
+                  id="preferenceProgram"
                   className="select select-lg select-bordered w-full mt-2"
                   value={values.preferenceProgram}
                   onChange={handleChange}

@@ -1,6 +1,29 @@
 import { BsMortarboardFill } from "react-icons/bs";
 import { RxHamburgerMenu } from "react-icons/rx";
 
+const navbarItems = [
+  {
+    label: "Home",
+    link: "#home",
+  },
+  {
+    label: "Program",
+    link: "#program",
+  },
+  {
+    label: "Benefit",
+    link: "#benefits",
+  },
+  {
+    label: "Testimoni",
+    link: "#testimonials",
+  },
+  {
+    label: "Contact",
+    link: "#contact",
+  },
+];
+
 const Navbar = () => {
   return (
     <section className="bg-white shadow-md sticky top-0 z-50">
@@ -28,21 +51,11 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-6 w-52 p-2 shadow"
             >
-              <li>
-                <a href="#home">Home</a>
-              </li>
-              <li>
-                <a href="#program">Program</a>
-              </li>
-              <li>
-                <a href="#benefits">Benefit</a>
-              </li>
-              <li>
-                <a href="#testimonials">Testimoni</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
+              {navbarItems.map((nav, index) => (
+                <li key={index} className="hover:underline">
+                  <a href={nav.link}>{nav.label}</a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -50,18 +63,11 @@ const Navbar = () => {
 
         <div className="navbar-end lg:flex hidden">
           <ul className="menu menu-horizontal p-0 items-center gap-3">
-            <li>
-              <a href="#home">Home</a>
-            </li>
-            <li>
-              <a href="#program">Program</a>
-            </li>
-            <li>
-              <a href="#benefits">Benefit</a>
-            </li>
-            <li>
-              <a href="#testimonials">Testimoni</a>
-            </li>
+            {navbarItems.map((nav, index) => (
+              <li key={index} className="hover:underline">
+                <a href={nav.link}>{nav.label}</a>
+              </li>
+            ))}
             <li>
               <a
                 href="#contact"
