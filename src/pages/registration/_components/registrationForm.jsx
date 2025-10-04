@@ -73,8 +73,15 @@ const RegistrationForm = () => {
         handlerRegistering({ values, resetForm });
       }}
       validate={(values) => {
-        var errors = {};
-        if (!values.email) errors.email = "Email wajib diisi";
+        const errors = {};
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (!values.email) {
+          errors.email = "Email wajib diisi";
+        } else if (!emailPattern.test(values.email)) {
+          errors.email = "Format email tidak valid";
+        }
+
         if (!values.name) errors.name = "Nama wajib diisi";
         if (!values.telp) errors.telp = "No telephone wajib diisi";
         if (!values.program) errors.program = "Program wajib diisi";
