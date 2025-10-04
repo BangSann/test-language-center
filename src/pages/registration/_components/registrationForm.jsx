@@ -95,7 +95,7 @@ const RegistrationForm = () => {
       }) => (
         <form
           onSubmit={handleSubmit}
-          className="space-y-2 text-start mt-6 px-24"
+          className="space-y-2 text-start mt-6 px-12 md:px-24"
         >
           <div className="flex flex-col gap-1">
             <label htmlFor="name" className="label">

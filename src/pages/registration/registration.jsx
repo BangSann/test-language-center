@@ -24,8 +24,8 @@ const RegistrationPage = () => {
       {/* header */}
 
       {/* content */}
-      <section className="mx-auto grid grid-cols-2 items-center justify-center h-[calc(100vh-64px)]">
-        <div className="flex items-center justify-center bg-blue-600 h-full">
+      <section className="mx-auto grid grid-cols-1 xl:grid-cols-2 items-center justify-center h-[calc(100vh-64px)]">
+        <div className="xl:flex items-center justify-center bg-blue-600 h-full hidden">
           <img
             src="/images/registration-image.jpg"
             alt="registration image"
@@ -33,7 +33,7 @@ const RegistrationPage = () => {
           />
         </div>
         <div className="bg-blue-600 h-full">
-          <div className="bg-white w-full h-full flex flex-col items-center justify-center rounded-s-xl">
+          <div className="bg-white w-full h-full flex flex-col items-center justify-center xl:rounded-s-xl">
             <h1 className="text-2xl font-bold">Lets Start Your Journey</h1>
             <p className="text-slate-700">Isi form dibawah ini untuk melakukan pendaftaran.</p>
             {/* regis form */}
