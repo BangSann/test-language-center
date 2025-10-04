@@ -33,7 +33,7 @@ const Banner = () => {
             <button
               className="btn btn-primary bg-blue-600 text-white transition duration-600 hover:scale-102"
               onClick={() => {
-                window.location = "#contact";
+                window.location = "#pricing";
               }}
             >
               Mulai perjalananmu
