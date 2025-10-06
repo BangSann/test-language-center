@@ -2,7 +2,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/home/home";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { ToastContainer } from "react-toastify";
-import RegistrationPage from "./pages/registration/registration";
+import React from "react";
+// import RegistrationPage from "./pages/registration/registration";
+
+const RegistrationPage = React.lazy(() => {
+  import("./pages/registration/registration");
+});
 
 function App() {
   return (
@@ -12,7 +17,7 @@ function App() {
         <Route path="/registration" element={<RegistrationPage />} />
       </Routes>
       <SpeedInsights />
-      <ToastContainer position="bottom-right"/>
+      <ToastContainer position="bottom-right" />
     </BrowserRouter>
   );
 }

@@ -54,6 +54,7 @@ const Banner = () => {
             className="w-full h-auto rounded-md hidden md:block"
             src="/images/hero-image.png"
             alt="hero image"
+            loading="lazy"
           />
         </div>
       </div>
