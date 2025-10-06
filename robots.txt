@@ -1,0 +1,22 @@
+User-agent: *
+Instruksi ini berlaku untuk SEMUA web crawler (termasuk Google, Bing, dll.)
+User-agent: *
+
+Disallow: /
+Secara default, kita mengizinkan semua crawler untuk mengakses seluruh situs.
+Kecuali jika Anda memiliki halaman admin atau halaman staging, JANGAN gunakan Disallow: /
+Mengizinkan akses ke SEMUA halaman.
+Disallow:
+
+Disallow: /private/
+Contoh: Jika Anda memiliki folder private yang tidak ingin diindeks
+Disallow: /private/
+Disallow: /*?
+Biasanya disarankan untuk menghindari pengindeksan URL dengan parameter query
+yang tidak perlu (seperti sesi atau ID pelacakan). Namun, ini dapat mengganggu
+beberapa fungsionalitas pencarian. Gunakan dengan hati-hati.
+Disallow: /?
+Sitemap
+Ganti https://www.google.com/url?sa=E&source=gmail&q=https://www.yourdomain.com/sitemap.xml dengan URL sitemap Anda yang sebenarnya.
+Ini membantu mesin pencari menemukan semua halaman penting Anda.
+Sitemap: https://www.google.com/url?sa=E&source=gmail&q=https://www.yourdomain.com/sitemap.xml

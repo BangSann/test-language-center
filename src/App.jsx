@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import HomePage from "./pages/home/home";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { ToastContainer } from "react-toastify";

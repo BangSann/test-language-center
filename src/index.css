@@ -1,13 +1,64 @@
 /* Import Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
-
 @import "tailwindcss";
 @plugin "daisyui" {
   themes: light --default;
 }
+/* ======================================= */
+/* 1. Lato Thin (100) */
+/* ======================================= */
+@font-face {
+    font-family: 'Lato';
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap; /* Disarankan untuk performa */
+    src: url('assets/font/lato/Lato-Regular.woff2') format('woff2');
+}
 
+/* ======================================= */
+/* 2. Lato Light (300) */
+/* ======================================= */
+@font-face {
+    font-family: 'Lato';
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+    src: url('/assets/font/lato/Lato-Light.woff2') format('woff2');
+}
+
+/* ======================================= */
+/* 3. Lato Regular (400) */
+/* ======================================= */
+@font-face {
+    font-family: 'Lato';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url('assets/font/lato/Lato-Regular.woff2') format('woff2');
+}
+
+/* ======================================= */
+/* 4. Lato Bold (700) */
+/* ======================================= */
+@font-face {
+    font-family: 'Lato';
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url('assets/font/lato/Lato-Bold.woff2') format('woff2');
+}
+
+/* ======================================= */
+/* 5. Lato Black (900) */
+/* ======================================= */
+@font-face {
+    font-family: 'Lato';
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+    src: url('assets/font/lato/Lato-Black.woff2') format('woff2');
+}
 :root {
-  font-family: "Lato", sans-serif;
+  font-family: "Lato" , sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -20,3 +71,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+#root {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 auto;
+  text-align: center;
+}
+
